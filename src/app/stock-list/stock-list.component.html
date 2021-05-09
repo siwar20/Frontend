@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+<table class="table table-sm">
+
+    <thead>
+        <tr>
+           <th> id</th>
+           <th>min</th>
+           <th>stock_remaining_quantity</th>
+           
+           
+           <th>Actions</th>
+
+
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr *ngFor = "let stock of stock">
+            <td> {{stock.id}}</td>
+            <td> {{stock.min}}</td>
+            <td> {{stock.stock_remaining_quantity}}</td>
+            
+            <td>
+                <button (click) = "updateStock(stock.id)" class="btn btn-info">Update</button>
+                <button (click) = "deleteStock(stock.id)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+            </td>
+
+           
+
+        </tr>
+    </tbody>
+
+    
+</table>
+  
+  
+  
+
+
+
+

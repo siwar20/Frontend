@@ -1,0 +1,92 @@
+<app-navbar></app-navbar>
+<div class="row justify-content-center">
+<div class="col-md-8 offset-md-3">
+<form #f="ngForm">
+
+  <div class="form-group" [hidden]="product.id">
+    <h1>New product</h1>
+    <p>Please enter product data</p>
+    <hr>
+  </div>
+
+    <div class="form-group">
+        <label>id</label>
+        <input type="number" class="form-control" id="id"
+          [(ngModel)] = "product.id" name="id">
+    
+    </div>
+
+
+<div class="form-group">
+    <label>product_name</label>
+    <input type="text" class="form-control" id="product_name"
+      [(ngModel)] = "product.product_name" name="product_name" placeholder="Enter Name" #desigProduct="ngModel"
+      [(ngModel)]="product.product_name" required maxlength="40">
+
+</div>
+
+<div class="form-group">
+    <label>dateExp</label>
+    <input type="number" class="form-control" id="dateExp"
+      [(ngModel)] = "product.dateExp" name="dateExp">
+
+</div>
+
+<div class="form-group">
+    <label>product_price</label>
+    <input type="number" class="form-control" id="product_price"
+      [(ngModel)] = "product.product_price" name="product_price">
+
+</div>
+
+<div class="form-group">
+    <label>code_a_barre</label>
+    <input type="number" class="form-control" id="code_a_barre"
+      [(ngModel)] = "product.code_a_barre" name="code_a_barre">
+
+</div>
+
+
+<button class="btn badge-warning" [disabled]="f.invalid" (click)="save()">
+    save
+</button>
+
+
+
+
+<div class="container row">
+  <div class="col-md-6">
+      <input type="file" (change)="onFileChanged($event)">
+  </div>
+  <div class="col-md-6">
+      <input type="button" (click)="onUpload()" value="upload">
+  </div>
+</div>
+<hr />
+<div class="container row">
+  <div class="col-md-12">
+      <div *ngIf=message>{{message}}</div>
+  </div>
+</div>
+<div class="container row">
+  <div class="col-md-6">
+      <input type="text" class="form-control" id="name" placeholder="image name" [(ngModel)]="imageName"
+          name="name" />
+  </div>
+  <div class="col-md-6">
+      <input type="button" (click)="getImage()" value="Get Image">
+  </div>
+</div>
+<div class="container row">
+  <div class="col-md-12">
+      <div *ngIf=retrievedImage>
+          <img [src]="retrievedImage">
+      </div>
+  </div>
+</div>
+
+
+
+</form>
+</div>
+</div>

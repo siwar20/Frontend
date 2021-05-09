@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+<a class="btn close" href="/stock-list">&times;</a>
+<div class="row justify-content-center">
+<div class="col-md-8 offset-md-3">
+<form #f="ngForm">
+
+  <div class="form-group" [hidden]="stock.id">
+    <h1>Update stock</h1>
+    <p>Please enter stock data</p>
+    <hr>
+  </div>
+
+    <div class="form-group">
+        <label>id</label>
+        <input type="number" class="form-control" id="id"
+          [(ngModel)] = "stock.id" name="id">
+    
+    </div>
+
+    <div class="form-group">
+        <label>min</label>
+        <input type="number" class="form-control" id="min"
+          [(ngModel)] = "stock.min" name="min">
+    
+    </div>
+
+    <div class="form-group">
+        <label>stock_remaining_quantity</label>
+        <input type="number" class="form-control" id="stock_remaining_quantity"
+          [(ngModel)] = "stock.stock_remaining_quantity" name="stock_remaining_quantity">
+    
+    </div>
+
+<button class="btn badge-warning" [disabled]="f.invalid" (click)="save()">
+    save
+</button>
+
+
+

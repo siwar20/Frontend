@@ -1,0 +1,52 @@
+<app-navbar></app-navbar>
+<div class="col-md-8 offset-md-3">
+<h3>Update-Product</h3>
+<form #f="ngForm">
+
+    <div class="form-group">
+        <label>id</label>
+        <input type="number" class="form-control" id="id"
+          [(ngModel)] = "product.id" name="id">
+    
+    </div>
+
+
+<div class="form-group">
+    <label>product_name</label>
+    <input type="text" class="form-control" id="product_name"
+      [(ngModel)] = "product.product_name" name="product_name">
+
+</div>
+
+<div class="form-group">
+    <label>dateExp</label>
+    <input type="number" class="form-control" id="dateExp"
+      [(ngModel)] = "product.dateExp" name="dateExp">
+
+</div>
+
+<div class="form-group">
+    <label>product_price</label>
+    <input type="number" class="form-control" id="product_price"
+      [(ngModel)] = "product.product_price" name="product_price">
+
+</div>
+
+<div class="form-group">
+    <label>code_a_barre</label>
+    <input type="number" class="form-control" id="code_a_barre"
+      [(ngModel)] = "product.code_a_barre" name="code_a_barre">
+
+</div>
+
+
+<button class="btn badge-warning" [disabled]="f.invalid" (click)="save()">
+    save
+</button>
+
+
+
+
+
+</form>
+</div>

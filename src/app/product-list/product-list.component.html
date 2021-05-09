@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+<label for="search" class="col-sm-2 col-form-label" style="text-align:left;">Search</label>
+    <div class="col-sm-6">
+    <input type="text" [(ngModel)]="searchValue" class="form-control" id="search"></div>
+
+<table class="table table-sm-6">
+    
+    <thead>
+        <tr>
+           <th> id</th>
+           <th>product_name</th>
+           <th>dateExp</th>
+           <th>product_price</th>
+           <th>code_a_barre</th>
+           
+           <th>Actions</th>
+
+
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr *ngFor  = "let product of product | searchfiltre:searchValue">
+            <td> {{product.id}}</td>
+            <td> {{product.product_name}}</td>
+            <td> {{product.dateExp}}</td>
+            <td> {{product.product_price}}</td>
+            <td> {{product.code_a_barre}}</td>
+            
+            <td>
+                <button (click) = "updateProduct(product.id)" class="btn btn-info">Update</button>
+                <button (click) = "deleteProduct(product.id)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+            </td>
+
+        </tr>
+    </tbody>
+
+
+</table>
+  
+  
+  
+

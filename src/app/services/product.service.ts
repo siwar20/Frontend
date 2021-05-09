@@ -1,36 +1,31 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Product } from '../Modele/Product';
-import { Observable } from 'rxjs';
+import { observable, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-
-  private resourceUrl: string;
-  constructor(protected http: HttpClient) {
-    this.resourceUrl =  'https://github.com/siwar20/consomi_tounsi.git';
-   }
-   create(product: Product) {
-    return this.http.post<Product>(this.resourceUrl, product);
+  private baseURL = "http://localhost:9800/api/product/product"
+ 
+  constructor(private httpclient: HttpClient) {}
+getProductList(): Observable<Product[]>{
+    return this.httpclient.get<Product[]>(this.baseURL);
+}
+addProduct(product: Product): Observable<Object>{
+  return this.httpclient.post(this.baseURL, product)
+}
+getProductById(id:number) : Observable<Product>{
+return this.httpclient.get<Product>(`${this.baseURL}/${id}`);
 
 }
-
-update(product: Product)  {
-    return this.http.put<Product>(this.resourceUrl, Product);
+updateProduct(id:number, product:Product): Observable<Object>{
+  return this.httpclient.put(`http://localhost:9800/api/product/Product`, product);
 }
 
-findOne(id: number) : Observable<Product> {
-    return this.http.get<Product>(`${this.resourceUrl}/${id}`);
-}
+deleteProduct(id: number): Observable<object>{
+  return this.httpclient.delete(`${this.baseURL}/${id}`);
 
-public findAll(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.resourceUrl);
-  }
-
-
-delete(id: number)  {
-    return this.http.delete<Product>(`${this.resourceUrl}/${id}`);
 }
 }

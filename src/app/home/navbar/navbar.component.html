@@ -4,15 +4,40 @@
 <div class="nav">
     <div class="container-fluid">
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-            <a href="#" class="navbar-brand">MENU</a>
+            
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav mr-auto">
-                    <a href="src/home" class="nav-item nav-link">Home</a>
-                    <a href="src/product" class="nav-item nav-link">Product</a>
+                    <a href="home" class="nav-item nav-link">home</a>
+
+                    <div class="navbar-nav ml-auto">
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Gestion Product</a>
+                            <div class="dropdown-menu">
+                                <a href="product-list"class="dropdown-item">product-list</a>
+                                <a href="add-product" class="dropdown-item">add-product</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="navbar-nav ml-auto">
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Gestion Stock</a>
+                            <div class="dropdown-menu">
+                                <a href="stock-list"class="dropdown-item">stock-list</a>
+                                <a href="add-stock" class="dropdown-item">add-stock</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                        
+                        
+                    
                    <!-- <a href="src/product-detail.html" class="nav-item nav-link">Product Detail</a>
                     <a href="src/cart.html" class="nav-item nav-link">Cart</a>
                     <a href="src/checkout.html" class="nav-item nav-link">Checkout</a>
@@ -42,4 +67,5 @@
 <!-- Nav Bar End -->    
 
 
+<router-outlet></router-outlet>
 </div>

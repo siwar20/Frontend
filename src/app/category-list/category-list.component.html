@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+<table class = "table table-striped">
+
+    <thead>
+        <tr>
+           <th> id</th>
+           <th>name</th>
+           <th>type</th>
+           
+           
+           <th>Actions</th>
+
+
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr *ngFor = "let category of category">
+            <td> {{category.id}}</td>
+            <td> {{category.name}}</td>
+            <td> {{category.type}}</td>
+            
+            <td>
+                <button (click) = "updateCategory(category.id)" class="btn btn-info">Update</button>
+                <button (click) = "deleteCategory(category.id)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+            </td>
+
+           
+
+        </tr>
+    </tbody>
+
+    <td>
+        <button (click) = "go()" class="btn btn-info">Add Category</button>
+       
+    </td>
+</table>
+  
+  
+  
+
+
+
