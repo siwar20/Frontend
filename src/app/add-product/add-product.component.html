@@ -46,11 +46,15 @@
 
 </div>
 
-
-<button class="btn badge-warning" [disabled]="f.invalid" (click)="save()">
-    save
-</button>
-
+<div class="form-group">
+  <label>category</label>
+  <select class="form-control" id="category" name="category" [(ngModel)]="product.category" >
+    <option [ngValue]="null"></option>
+    <option [ngValue]="categoryOption.id === product.category?.id ? product.category : categoryOption" *ngFor="let categoryOption of categorylist">
+      {{categoryOption.id}}:
+      {{categoryOption.name}}</option>
+  </select>
+</div>
 
 
 
@@ -70,13 +74,14 @@
 </div>
 <div class="container row">
   <div class="col-md-6">
-      <input type="text" class="form-control" id="name" placeholder="image name" [(ngModel)]="imageName"
-          name="name" />
+      <input type="text" class="form-control" id="image" placeholder="image" [(ngModel)]="image"
+          name="image" />
   </div>
   <div class="col-md-6">
       <input type="button" (click)="getImage()" value="Get Image">
   </div>
 </div>
+
 <div class="container row">
   <div class="col-md-12">
       <div *ngIf=retrievedImage>
@@ -85,6 +90,12 @@
   </div>
 </div>
 
+<button class="btn badge-warning bi bi-check-lg" [disabled]="f.invalid" (click)="saveProduct()">
+  save
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+    <path d="M13.485 1.431a1.473 1.473 0 0 1 2.104 2.062l-7.84 9.801a1.473 1.473 0 0 1-2.12.04L.431 8.138a1.473 1.473 0 0 1 2.084-2.083l4.111 4.112 6.82-8.69a.486.486 0 0 1 .04-.045z"/>
+  </svg>
+</button>
 
 
 </form>

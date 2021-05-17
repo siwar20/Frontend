@@ -7,7 +7,7 @@ import { Stock } from '../Modele/stock';
   providedIn: 'root'
 })
 export class StockService {
-  private baseURL = "http://localhost:9800/api/stock/Stocks"
+  private baseURL = "http://localhost:9890/api/stock/Stocks"
 
   constructor(private httpclient: HttpClient) { }
 
@@ -22,7 +22,7 @@ return this.httpclient.get<Stock>(`${this.baseURL}/${id}`);
 
 }
 updateStock(id:number, stock:Stock): Observable<Object>{
-  return this.httpclient.put(`http://localhost:9800/api/stock/update`, stock);
+  return this.httpclient.put(`http://localhost:9890/api/stock/update`, stock);
 }
 
 deleteStock(id: number): Observable<object>{

@@ -1,3 +1,5 @@
+import { Category } from "./category";
+import { Image } from "./image";
 
 
 export class Product {
@@ -6,5 +8,6 @@ export class Product {
     dateExp:number;
     product_price:number;
     code_a_barre:number;
-    
+    category?: Category;
+    image?:Image;
 }

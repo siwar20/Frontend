@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+<a class="btn close" href="/rayon-list">&times;</a>
+<div class="row justify-content-center">
+<div class="col-md-8 offset-md-3">
+<form #f="ngForm">
+
+  <div class="form-group" [hidden]="rayon.id">
+    <h1>New rayon</h1>
+    <p>Please enter rayon data</p>
+    <hr>
+  </div>
+
+    <div class="form-group">
+        <label>id</label>
+        <input type="number" class="form-control" id="id"
+          [(ngModel)] = "rayon.id" name="id">
+    
+    </div>
+
+    <div class="form-group">
+        <label>quantity</label>
+        <input type="number" class="form-control" id="quantity"
+          [(ngModel)] = "rayon.quantity" name="quantity">
+    
+    </div>
+
+    <div class="form-group">
+        <label>type</label>
+        <input type="text" class="form-control" id="type"
+          [(ngModel)] = "rayon.type" name="type">
+    
+    </div>
+
+    <div class="form-group">
+        <label>max</label>
+        <input type="number" class="form-control" id="max"
+          [(ngModel)] = "rayon.max" name="max">
+    
+    </div>
+
+<button class="btn badge-warning" [disabled]="f.invalid" (click)="save()">
+    save
+</button>
+

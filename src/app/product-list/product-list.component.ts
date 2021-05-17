@@ -21,14 +21,14 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProduct();
-    this.http.get('http://localhost:9800/api/product/Product/find').subscribe((result :any)=>{
+    this.http.get(`http://localhost:9890/api/product/Product/find`).subscribe((result :any)=>{
   this.product=result;
 });
   }
   private getProduct(){
     this.productservices.getProductList().subscribe(data =>{
       this.product = data;
-
+      console.log('********products: ', this.product);
     });
   }
 

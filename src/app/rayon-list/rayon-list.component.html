@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+<table class="table table-sm-6">
+
+    <thead>
+        <tr>
+           <th> id</th>
+           <th>quantity</th>
+           <th>type</th>
+           <th>max</th>
+           
+           <th>Actions</th>
+
+
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr *ngFor = "let rayon of rayon">
+            <td> {{rayon.id}}</td>
+            <td> {{rayon.quantity}}</td>
+            <td> {{rayon.type}}</td>
+            <td> {{rayon.max}}</td>
+            
+           
+
+        </tr>
+    </tbody>
+    <br>
+    <br><br>
+    <button (click) = "sendmail()" class="btn btn-warning" >Are there empty aisles </button>

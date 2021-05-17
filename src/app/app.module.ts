@@ -22,6 +22,25 @@ import { StockListComponent } from './stock-list/stock-list.component';
 import { AddStockComponent } from './add-stock/add-stock.component';
 import { UpdateStockComponent } from './update-stock/update-stock.component';
 import { SearchfiltrePipe } from './searchfiltre.pipe';
+import { MailingComponent } from './mailing/mailing.component';
+import { RayonListComponent } from './rayon-list/rayon-list.component';
+import { AddRayonComponent } from './add-rayon/add-rayon.component';
+
+
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ProfileComponent } from './profile/profile.component';
+import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { BoardUserComponent } from './board-user/board-user.component';
+import { BoardCustomerComponent } from './board-customer/board-customer.component';
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { ProductfoodComponent } from './product/productfood/productfood.component';
+import { ProductclothingComponent } from './product/productclothing/productclothing.component';
+import { ProductresultComponent } from './shared/productresult/productresult.component';
+import { FashionEtBeautyComponent } from './categories/fashion-et-beauty/fashion-et-beauty.component';
+import { ClothesComponent } from './categories/clothes/clothes.component';
+import { FoodComponent } from './categories/food/food.component';
+import { ElectronicsComponent } from './categories/electronics/electronics.component' ;
 
 const routes: Routes = [
   {path: 'product-list', component: ProductListComponent }
@@ -51,7 +70,26 @@ const routes: Routes = [
   
     UpdateStockComponent,
   
-    SearchfiltrePipe
+    SearchfiltrePipe,
+  
+    MailingComponent,
+  
+    RayonListComponent,
+  
+    AddRayonComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent,
+    BoardAdminComponent,
+    BoardUserComponent,
+    BoardCustomerComponent,
+    ProductfoodComponent,
+    ProductclothingComponent,
+    ProductresultComponent,
+    FashionEtBeautyComponent,
+    ClothesComponent,
+    FoodComponent,
+    ElectronicsComponent
   ],
   imports: [
     BrowserModule,
