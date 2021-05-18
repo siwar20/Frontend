@@ -39,6 +39,8 @@ export class FoodComponent implements OnInit {
     this.productservice.getProductList().subscribe(data=>{
           this.product=data;
           
+          
+          
     })
   }
   processReq(message: any){
@@ -59,8 +61,10 @@ export class FoodComponent implements OnInit {
   foodProduct(produit:Product[]){
     if (this.produit.category.name == 'food'){
       this.show = false
+     
     }else {
       this.show = true
+      this.getProduct();
     }
 
   }

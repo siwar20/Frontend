@@ -1,0 +1,39 @@
+<!-- Default form subscription -->
+<br><br>
+<h1>Add a new Chart :</h1><br><br>
+<form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Owner</label>
+      <input type="text" [(ngModel)]="form.owner" class="form-control" id="exampleInputEmail1" name="name" aria-describedby="emailHelp" placeholder="Owner">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Amount</label>
+      <input type="text" [(ngModel)]="form.money" class="form-control" id="exampleInputPassword1" name="location" placeholder="Amount">
+    </div>
+    
+  
+
+    
+        <div class=" form-group">
+            <label> Event </label>
+            <!--  <input class=" form-control" placeholder="Projet" type="text" name="projet"
+                [(ngModel)]="form.idProjet" required #idProjet="ngModel" />
+        </div>-->
+            <select class="form-control" id="exampleFormControlSelect1" name="idProjet"
+                [(ngModel)]="form.idEvent">
+                <option  *ngFor="let y of events"
+                    value="{{y.id}}">
+                    {{y.name}}</option>
+
+            </select>
+        </div>
+ 
+
+  
+ 
+    <button type="submit" (click)="onSubmit()" class="btn btn-primary">Add</button>
+    
+    <button type="submit" (click)="gotoList()" class="btn btn-warning ml-2">Cancel</button>
+  </form>
+<br>

@@ -26,6 +26,12 @@ import { ClothesComponent } from './categories/clothes/clothes.component';
 import { ElectronicsComponent } from './categories/electronics/electronics.component';
 import { FashionEtBeautyComponent } from './categories/fashion-et-beauty/fashion-et-beauty.component';
 import { GestionProductComponent } from './gestion-product/gestion-product.component';
+import { EventComponent } from './event/event.component';
+import { AddEventComponent } from './event/add-event/add-event.component';
+import { CagnotteComponent } from './cagnotte/cagnotte.component';
+import { AddCagnotteComponent } from './cagnotte/add-cagnotte/add-cagnotte.component';
+import { UsersComponent } from './users/users.component';
+import { TrailerComponent } from './event/trailer/trailer.component';
 
 
 
@@ -42,7 +48,7 @@ const routes: Routes = [
   {path: "update-stock/:id", component: UpdateStockComponent},
   {path: "rayon-list", component: RayonListComponent},
   {path: "add-rayon", component: AddRayonComponent},
-  { path: 'login', component: LoginComponent },
+  { path: "login", component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'user', component: BoardUserComponent },
@@ -53,7 +59,13 @@ const routes: Routes = [
   { path: "electronics/:id", component: ElectronicsComponent },
   { path: "fashion-et-beauty/:id", component: FashionEtBeautyComponent },
   {path: "gestion-product", component: GestionProductComponent},
-  { path: 'categories/food', component: FoodComponent }
+  { path: 'categories/food', component: FoodComponent },
+  {path:"Events", component: EventComponent},
+  {path:"Add-Event", component: AddEventComponent},
+  {path:"Charts", component: CagnotteComponent},
+  {path:"Add-Chart", component: AddCagnotteComponent},
+  {path:"Users", component: UsersComponent},
+  {path:"Event/:id", component: TrailerComponent}
 
   
 

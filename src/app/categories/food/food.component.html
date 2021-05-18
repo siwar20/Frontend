@@ -22,10 +22,10 @@
    <a class="btn close" href="/home">&times;</a>
   
               
-    <div class="row row-cols-6 "   >
+    <div *ngIf="show"  >
         <tbody>
-            <tr [hidden] = "show" *ngFor ="let product of product "  >
-                 <div class="col-md-6">
+            <tr   *ngFor ="let product of product "  >
+                 <div>
                     <div class="card" style="width: 18rem;">
                       <th scope="col-md-3">
                         <img [src]=" 'data:image/jpeg;base64,' + product.image.picByte" style="width: 100px;"> 

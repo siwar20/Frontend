@@ -1,0 +1,35 @@
+<!-- Default form subscription -->
+<br><br>
+<h1>Add a new Event :</h1><br><br>
+<form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Name</label>
+      <input type="text" [(ngModel)]="form.name" class="form-control" id="exampleInputEmail1" name="name" aria-describedby="emailHelp" placeholder="Enter event's name">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Location</label>
+      <input type="text" [(ngModel)]="form.lieu" class="form-control" id="exampleInputPassword1" name="location" placeholder="Location">
+    </div>
+    
+    <div class="form-group">
+        <label for="exampleInputPassword1">Date</label>
+        <input type="date" [(ngModel)]="form.dateEvent" class="form-control" id="s" name="date" placeholder="Date">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">Budget</label>
+        <input type="number" [(ngModel)]="form.budget" class="form-control" name="budget" id="exampleInputPassword1" placeholder="Budget">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">Trailer link</label>
+        <input type="text" [(ngModel)]="form.video" class="form-control" name="budget" id="exampleInputPassword1" placeholder="Budget">
+      </div>
+
+  
+ 
+    <button type="submit" (click)="onSubmit()" class="btn btn-primary">Add</button>
+    
+    <button type="submit" (click)="gotoList()" class="btn btn-warning ml-2">Cancel</button>
+  </form>

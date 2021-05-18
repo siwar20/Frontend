@@ -1,0 +1,34 @@
+<br><br>
+<h3>Event name :  {{event.name}}</h3>
+<h3>Event Date :  {{event.dateEvent}}</h3>
+<h3>Event Location :  {{event.lieu}}</h3>
+
+<br><br>
+
+<h3>Trailer</h3>
+
+<youtube-player [videoId]="event.video" suggestedQuality="highres" [height]="400" [width]="900">
+</youtube-player>
+<br><br>
+
+<button (click)="addCagnotte()"  type="button" class="btn btn-primary">Add a chart</button> 
+<button (click)="gotoList()"  type="button" class="btn btn-primary-light ml-2">Cancel</button> 
+
+
+<br>
+
+<ng-template #t let-fill="fill">
+  <span class="star" [class.full]="fill === 100">
+    <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;
+  </span>
+</ng-template>
+
+<ngb-rating [(rate)]="currentRate" [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
+
+<hr>
+<pre>Rate: <b>{{currentRate}}</b></pre>
+<button class="btn btn-sm btn-outline-primary mr-2" (click)="currentRate = 0">0</button>
+<button class="btn btn-sm btn-outline-primary mr-2" (click)="currentRate = 2.5">2.5</button>
+<button class="btn btn-sm btn-outline-primary mr-2" (click)="currentRate = 5">5</button>
+<br><br><br>
+

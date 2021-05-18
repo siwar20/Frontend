@@ -41,6 +41,15 @@ import { FashionEtBeautyComponent } from './categories/fashion-et-beauty/fashion
 import { ClothesComponent } from './categories/clothes/clothes.component';
 import { FoodComponent } from './categories/food/food.component';
 import { ElectronicsComponent } from './categories/electronics/electronics.component' ;
+import { EventComponent } from './event/event.component';
+import { AddEventComponent } from './event/add-event/add-event.component';
+import { CagnotteComponent } from './cagnotte/cagnotte.component';
+import { AddCagnotteComponent } from './cagnotte/add-cagnotte/add-cagnotte.component';
+import { TrailerComponent } from './event/trailer/trailer.component';
+import { UsersComponent } from './users/users.component';
+import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 const routes: Routes = [
   {path: 'product-list', component: ProductListComponent }
@@ -89,12 +98,20 @@ const routes: Routes = [
     FashionEtBeautyComponent,
     ClothesComponent,
     FoodComponent,
-    ElectronicsComponent
+    ElectronicsComponent,
+    EventComponent,
+    AddEventComponent,
+    CagnotteComponent,
+    AddCagnotteComponent,
+    TrailerComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NgbModule,
+    NgxYoutubePlayerModule.forRoot(),
     FormsModule
   ],
   providers: [],
